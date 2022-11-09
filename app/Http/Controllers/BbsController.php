@@ -25,4 +25,19 @@ class BbsController extends Controller
         }
         return response($_str)->header('Content-type', 'text/plain');
     }
+
+
+    /**
+     * @param $bb
+     * @return Response|Application|ResponseFactory
+     */
+    public function detail($bb): Response|Application|ResponseFactory
+    {
+        $bb = Bb::find($bb);
+        $_str = $bb->title . "\r\n\r\n";
+        $_str .= $bb->content . "\r\n";
+        $_str .= $bb->price . "руб. \r\n";
+
+        return response($_str)->header('Content-type', 'text/plain');
+    }
 }

@@ -11,6 +11,7 @@ use Illuminate\Http\Response;
 class BbsController extends Controller
 {
     /**
+     * Получение всех записей из базы
      * @return Response|Application|ResponseFactory
      */
     public function index(): Response|Application|ResponseFactory
@@ -28,6 +29,7 @@ class BbsController extends Controller
 
 
     /**
+     * Получение отдельной записи из базы
      * @param $bb
      * @return Response|Application|ResponseFactory
      */

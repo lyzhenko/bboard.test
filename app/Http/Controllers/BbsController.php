@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
+use App\Models\Bb;
+use Illuminate\Http\Response;
 
 class BbsController extends Controller
 {
-    public function index(): \Illuminate\Http\Response|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
+    /**
+     * @return Response|Application|ResponseFactory
+     */
+    public function index(): Response|Application|ResponseFactory
     {
-        return response('Здесь будет перечень обьявлений.')->header('Content-type', 'text/plain');
+        $bbs = Bb::latest()->get();
+        $_str = "Обьявление\r\n\r\n";
+
+        foreach ($bbs as $bb) {
+            $_str .= $bb->title . "\r\n";
+            $_str .= $bb->price . " руб. \r\n";
+            $_str .= "\r\n";
+        }
+        return response($_str)->header('Content-type', 'text/plain');
     }
 }

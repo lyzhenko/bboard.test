@@ -18,6 +18,7 @@ class CreateBbsTable extends Migration
             $table->string('title'); // Строка
             $table->text('content'); // поля типа мемо теск
             $table->float('price'); // число с плавающей точность
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); //Поле связи.
             $table->timestamps();
             $table->index('created_at'); // Индексирование поля
         });

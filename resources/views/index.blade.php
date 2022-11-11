@@ -2,9 +2,9 @@
 
 @section('title', 'главная')
 
-@section('main')
+@section('content')
     @if(count($bbs) > 0)
-        <table>
+        <table class="table table-striped">
             @foreach($bbs as $bb)
                 <tr>
                     <td><h3>{{$bb->title}}</h3></td>

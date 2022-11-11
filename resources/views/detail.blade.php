@@ -2,7 +2,7 @@
 
 @section('title', 'Детальная')
 
-@section('main')
+@section('content')
     <h2>{{$bb->title}}</h2>
     <h2>{{$bb->content}}</h2>
     <h2>{{$bb->price}}</h2>

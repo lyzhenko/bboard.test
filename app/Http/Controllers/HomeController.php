@@ -33,6 +33,9 @@ class HomeController extends Controller
         return view('home', ['bbs' => Auth::user()->bbs()->latest()->get()]);
     }
 
+    /**
+     * @return Factory|View|Application
+     */
     public function add_advt(): Factory|View|Application
     {
         return view('advt');

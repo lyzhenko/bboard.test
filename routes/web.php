@@ -26,7 +26,6 @@ Route::get('/home/{bb}', [App\Http\Controllers\HomeController::class, 'edit_advt
 Route::patch('/home/{bb}', [App\Http\Controllers\HomeController::class, 'update_advt'])->name('edit_advt');
 Route::get('/home/{bb}/delete', [App\Http\Controllers\HomeController::class, 'delete_advt'])->name('delete_advt');
 Route::delete('/home/{bb}', [App\Http\Controllers\HomeController::class, 'destroy_advt'])->name('destroy_advt');
-//
 
 // Детальная информация о записи.
 Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');

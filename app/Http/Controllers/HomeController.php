@@ -7,8 +7,8 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Request;
 
 
 class HomeController extends Controller
@@ -47,7 +47,6 @@ class HomeController extends Controller
      */
     public function save_advt(Request $request): \Illuminate\Http\RedirectResponse
     {
-        /** @var TYPE_NAME $request */
         Auth::user()->bbs()->create([
             'title' => $request->title,
             'content' => $request->content,
@@ -76,7 +75,6 @@ class HomeController extends Controller
      */
     public function update_advt(Request $request, Bb $bb): RedirectResponse
     {
-        /** @var TYPE_NAME $request */
         $bb->fill([
             'title' => $request->title,
             'content' => $request->content,

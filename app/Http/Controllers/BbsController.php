@@ -17,7 +17,6 @@ class BbsController extends Controller
      */
     public function index(): FactoryAlias|ViewAlias|Application
     {
-
         /*$bbs = Bb::latest()->get();
         $_str = "Обьявление\r\n\r\n";
 

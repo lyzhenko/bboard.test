@@ -24,6 +24,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Bb whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Bb whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $user_id
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Bb whereUserId($value)
  */
 class Bb extends Model
 {

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Models\Remaining
@@ -31,7 +32,10 @@ class Remaining extends Model
 
     protected $fillable = ['good_id', 'count'];
 
-    public function good(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    /**
+     * @return BelongsTo
+     */
+    public function good(): BelongsTo
     {
         return $this->belongsTo(Good::class);
     }

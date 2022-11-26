@@ -103,5 +103,4 @@ class HomeController extends Controller
         $bb->delete();
         return redirect()->route('home');
     }
-
 }
